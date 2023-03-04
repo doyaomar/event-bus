@@ -2,7 +2,7 @@
 
 public class KafkaConfiguration
 {
-    public ProducerConfig? ProducerConfig { get; set; }
-
     public ConsumerConfig? ConsumerConfig { get; set; }
+
+    public ProducerConfig? ProducerConfig { get; set; }
 }

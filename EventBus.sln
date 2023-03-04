@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\EventBus\Ev
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Kafka", "src\EventBus.Kafka\EventBus.Kafka.csproj", "{48A316EC-32CB-4777-AC03-16E5CB92D94E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8538DFE0-7DB5-4B4E-A06E-A90227598862}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C02ABC4A-BD86-48FA-94D8-16F50E208068} = {8538DFE0-7DB5-4B4E-A06E-A90227598862}
+		{48A316EC-32CB-4777-AC03-16E5CB92D94E} = {8538DFE0-7DB5-4B4E-A06E-A90227598862}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE930040-AA44-4B4D-9644-3EFA518C1361}
