@@ -14,17 +14,17 @@ internal class EventBusKafka : IEventBus
 
     public void Publish(IntegrationEvent @event)
     {
-        string eventName = EventBusSubscriptionManager.GetEventName<IntegrationEvent>();
         using IProducer<Guid, IntegrationEvent> producer = GetProducer();
-        producer.Produce(eventName, new Message<Guid, IntegrationEvent>() { Key = @event.Id, Value = @event });
+        string eventName = EventBusSubscriptionManager.GetEventName(@event);
+        producer.Produce(eventName, new Message<Guid, IntegrationEvent>() { Key = @event.Id, Value = @event, });
     }
 
     public async Task PublishAsync(IntegrationEvent @event)
     {
         using IProducer<Guid, IntegrationEvent> producer = GetProducer();
-        string eventName = EventBusSubscriptionManager.GetEventName<IntegrationEvent>();
+        string eventName = EventBusSubscriptionManager.GetEventName(@event);
         await producer
-            .ProduceAsync(eventName, new Message<Guid, IntegrationEvent>() { Key = @event.Id, Value = @event })
+            .ProduceAsync(eventName, new Message<Guid, IntegrationEvent>() { Key = @event.Id, Value = @event, })
             .ConfigureAwait(false);
     }
 

@@ -12,6 +12,7 @@ public class EventBusSubscriptionManager : IEventBusSubscriptionManager
     }
 
     public static string GetEventName<T>() where T : IntegrationEvent => typeof(T).Name;
+    public static string GetEventName(IntegrationEvent @event) => @event.GetType().Name;
 
     public void AddSubscription<T, TH>()
         where T : IntegrationEvent
